@@ -43,7 +43,7 @@ public class NewsDao {
                 String newsContent = resultSet.getString("newsContent");
                 String newsStatus = resultSet.getString("newsStatus");
                 String newsType = resultSet.getString("newsType");
-                Date createTime = resultSet.getDate("createTime");
+                String createTime = resultSet.getString("createTime");
                 News news = new News(newsId, newTitle, newsContent, newsStatus, newsType, createTime);
                 newsList.add(news);
             }
@@ -136,7 +136,7 @@ public class NewsDao {
             statement.setString(2, newscontent);
             statement.setString(3, "未审核");
             statement.setString(4, newstype);
-            statement.setDate(5, Date.valueOf(nowSystemTime));
+            statement.setString(5, nowSystemTime);
             row = statement.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
@@ -270,7 +270,7 @@ public class NewsDao {
                 String newsContent = resultSet.getString("newsContent");
                 String newsStatus = resultSet.getString("newsStatus");
                 String newsType = resultSet.getString("newsType");
-                Date createTime = resultSet.getDate("createTime");
+                String createTime = resultSet.getString("createTime");
                 news = new News(newsId, newTitle, newsContent, newsStatus, newsType, createTime);
             }
 

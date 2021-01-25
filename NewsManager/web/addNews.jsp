@@ -31,7 +31,9 @@
         <option value="html">javascript</option>
     </select>
     <br/>
-    <textarea id="content" name="newscontent" rows="8" cols="70"></textarea>
+    <div style="text-align: center">
+    <textarea id="content" name="newscontent" rows="20"></textarea>
+    </div>
     <input type="submit" value="添加"/>
 </form>
 </body>

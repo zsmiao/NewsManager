@@ -14,12 +14,12 @@ public class News {
     private String newsContent;
     private String newsStatus;
     private String newsType;
-    private Date createTime;
+    private String createTime;
 
     public News() {
     }
 
-    public News(Integer newsId, String newsTitle, String newsContent, String newsStatus, String newsType, Date createTime) {
+    public News(Integer newsId, String newsTitle, String newsContent, String newsStatus, String newsType, String createTime) {
         this.newsId = newsId;
         this.newsTitle = newsTitle;
         this.newsContent = newsContent;
@@ -68,11 +68,11 @@ public class News {
         this.newsType = newsType;
     }
 
-    public Date getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(Date createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

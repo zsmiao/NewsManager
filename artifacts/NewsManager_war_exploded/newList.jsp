@@ -33,7 +33,7 @@
     <input type="button" value="批量审核" onclick="changeForm()"/>
     <input type="hidden" id="oprate" name="oprate" value="batchDeletion">
     <table width="1000px" cellpadding="0px" cellspacing="0px" border="1px"
-           style="border: 1px solid gray;border-collapse: collapse;text-align: center">
+           style="border: 1px solid gray;border-collapse: collapse;text-align: center;margin: 0 auto">
         <tr>
             <th><input type="checkbox" name="all" onclick="selectAll(this)"/></th>
             <th>文章ID</th>
