@@ -1,11 +1,13 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Administrator
+  User: ZhangSenmiao
   Date: 2021/1/23
   Time: 20:19
   To change this template use File | Settings | File Templates.
 --%>
+<%--设置页面信息--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%--引入标签库--%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -23,13 +25,15 @@
         }
     </script>
 </head>
-<body>
-<form action="NewsServlet" method="post">
+<body style="text-align: center">
+<a href="addNews.jsp"><button>添加</button></a>
+<form action="NewsServlet" method="post" style="text-align: center">
+
     <input type="submit" value="批量删除"/>
     <input type="button" value="批量审核" onclick="changeForm()"/>
     <input type="hidden" id="oprate" name="oprate" value="batchDeletion">
     <table width="1000px" cellpadding="0px" cellspacing="0px" border="1px"
-           style="border: 1px solid gray;border-collapse: collapse">
+           style="border: 1px solid gray;border-collapse: collapse;text-align: center">
         <tr>
             <th><input type="checkbox" name="all" onclick="selectAll(this)"/></th>
             <th>文章ID</th>
@@ -48,7 +52,7 @@
                 <td>${news.createTime}</td>
                 <td>${news.newsStatus}</td>
                 <td>
-                    <a href="NewsServlet?toupdate" > 编辑</a>
+                    <a href="NewsServlet?oprate=toupdate&id=${news.newsId}" > 编辑</a>
                         |
                     <a href="NewsServlet?oprate=delete&id=${news.newsId}">删除</a></td>
             </tr>

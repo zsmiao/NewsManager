@@ -54,6 +54,19 @@ public class NewsServlet extends HttpServlet {
                 int row=newsDao.batchReview(integer);
             }
             resp.sendRedirect("NewsServlet");
+        }else if ("toupdate".equals(oprate)){
+            Integer id = Integer.valueOf(req.getParameter("id"));
+            News news=newsDao.getNews(id);
+            req.setAttribute("news",news);
+            req.getRequestDispatcher("newsUpdate.jsp").forward(req,resp);
+
+        }else if ("updatenews".equals(oprate)){
+            Integer id = Integer.valueOf(req.getParameter("id"));
+            String newsTitle = req.getParameter("newstitle");
+            String newsType = req.getParameter("newstype");
+            String newsContent = req.getParameter("newscontent");
+            int row = newsDao.updateNews(id, newsTitle, newsType, newsContent);
+            resp.sendRedirect("NewsServlet");
         }
         else {
             Integer pageNumber = 1;
