@@ -21,7 +21,7 @@
     </script>
 </head>
 <body style="text-align: center">
-<form action="NewsServlet" method="post" autocomplete="off" style="text-align: center">
+<form action="${pageContext.request.contextPath}/addNews" method="post" autocomplete="off" style="text-align: center">
     <input type="hidden" value="addNews" name="oprate">
     <input type="text" name="newstitle" placeholder="请输入新闻标题"/><br>
     新闻栏目
