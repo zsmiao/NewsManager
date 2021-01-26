@@ -81,6 +81,7 @@ public class NewsServlet extends HttpServlet {
             //新闻总条数
             int count = newsDao.getCount();
             Integer pageSize = 10;
+
             int pageCount = count % pageSize == 0 ? count / pageSize : count / pageSize + 1;
             if (pageNumber > pageCount) {
                 pageNumber = pageCount;
@@ -88,6 +89,8 @@ public class NewsServlet extends HttpServlet {
             //调用查询集合的方法
             List<News> newsList = newsDao.getNewsList(pageNumber, pageSize);
             //添加到request作用域中
+            req.setAttribute("count",count);
+            req.setAttribute("pageSize",pageSize);
             req.setAttribute("newsList", newsList);
             //转发到newList.jsp界面
             req.setAttribute("pageNumber", pageNumber);
@@ -95,7 +98,7 @@ public class NewsServlet extends HttpServlet {
   /*      for (News news : newsList) {
             System.out.println(news.toString());
         }*/
-            req.getRequestDispatcher("newList.jsp").forward(req, resp);
+            req.getRequestDispatcher("tables.jsp").forward(req, resp);
         }
     }
 

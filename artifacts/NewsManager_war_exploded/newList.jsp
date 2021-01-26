@@ -25,9 +25,9 @@
         }
     </script>
 </head>
-<body style="text-align: center">
+<body>
 <a href="addNews.jsp"><button>添加</button></a>
-<form action="NewsServlet" method="post" style="text-align: center">
+<form action="#" method="post" style="text-align: center">
 
     <input type="submit" value="批量删除"/>
     <input type="button" value="批量审核" onclick="changeForm()"/>
@@ -58,7 +58,7 @@
             </tr>
         </c:forEach>
         <tr>
-            <td colspan="6">
+            <td colspan="7">
                 <a href="NewsServlet?pageNumber=1">首页</a>
                 <a href="NewsServlet?pageNumber=${pageNumber-1}">上一页</a>
                 <a href="NewsServlet?pageNumber=${pageNumber+1}">下一页</a>
